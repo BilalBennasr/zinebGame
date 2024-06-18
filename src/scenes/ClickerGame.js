@@ -17,7 +17,7 @@ export class ClickerGame extends Scene
 
         this.add.image(512, 384, 'background');
 
-        this.scoreText = this.add.text(32, 32, 'Goûté: 0', textStyle).setDepth(1);
+        this.scoreText = this.add.text(32, 32, 'Goûtés : 0', textStyle).setDepth(1);
         this.timeText = this.add.text(1024 - 32, 32, 'Temps: 10', textStyle).setOrigin(1, 0).setDepth(1);
 
         //  Our 10 second timer. It starts automatically when the scene is created.
@@ -47,7 +47,7 @@ export class ClickerGame extends Scene
         const coin = this.physics.add.sprite(x, y, randomImage);
         
         coin.setScale(0.2);
-        
+
         coin.setVelocityX(Phaser.Math.Between(-400, 400));
         coin.setCollideWorldBounds(true);
         coin.setBounce(0.9);
@@ -73,7 +73,7 @@ export class ClickerGame extends Scene
         this.score++;
 
         //  Update the score text
-        this.scoreText.setText('Coins: ' + this.score);
+        this.scoreText.setText('Goûtés : ' + this.score);
 
         //  Drop a new coin
         this.dropCoin();
@@ -81,7 +81,7 @@ export class ClickerGame extends Scene
 
     update ()
     {
-        this.timeText.setText('Time: ' + Math.ceil(this.timer.getRemainingSeconds()));
+        this.timeText.setText('Temps : ' + Math.ceil(this.timer.getRemainingSeconds()));
     }
 
     gameOver ()

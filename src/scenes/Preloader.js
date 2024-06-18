@@ -36,6 +36,7 @@ export class Preloader extends Scene
         this.load.image('bubbleTea', 'bubble-tea.png');
         this.load.image('pretzel', 'bretzel.png');
         this.load.image('pickle', 'cornichon.png');
+        this.load.image('princess', 'princesse.png');
         this.load.image('logo', 'cc-logo.png');
         this.load.atlas('coin', 'coin.png', 'coin.json');
     }

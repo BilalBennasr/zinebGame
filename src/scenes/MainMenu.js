@@ -16,7 +16,7 @@ export class MainMenu extends Scene
 
         this.add.image(512, 384, 'background');
 
-        const logo = this.add.image(512, -270, 'logo');
+        const logo = this.add.image(512, -270, 'princess');
 
         this.tweens.add({
             targets: logo,
