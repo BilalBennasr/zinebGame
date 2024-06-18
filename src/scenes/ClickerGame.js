@@ -25,7 +25,7 @@ export class ClickerGame extends Scene
 
         this.physics.world.setBounds(0, -400, 1024, 768 + 310);
 
-        for (let i = 0; i < 32; i++)
+        for (let i = 0; i < 10; i++)
         {
             this.dropCoin();
         }
