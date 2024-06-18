@@ -17,8 +17,8 @@ export class ClickerGame extends Scene
 
         this.add.image(512, 384, 'background');
 
-        this.scoreText = this.add.text(32, 32, 'Coins: 0', textStyle).setDepth(1);
-        this.timeText = this.add.text(1024 - 32, 32, 'Time: 10', textStyle).setOrigin(1, 0).setDepth(1);
+        this.scoreText = this.add.text(32, 32, 'Goûté: 0', textStyle).setDepth(1);
+        this.timeText = this.add.text(1024 - 32, 32, 'Temps: 10', textStyle).setOrigin(1, 0).setDepth(1);
 
         //  Our 10 second timer. It starts automatically when the scene is created.
         this.timer = this.time.addEvent({ delay: 10000, callback: () => this.gameOver() });
@@ -38,8 +38,16 @@ export class ClickerGame extends Scene
         const x = Phaser.Math.Between(128, 896);
         const y = Phaser.Math.Between(0, -400);
 
-        const coin = this.physics.add.sprite(x, y, 'coin').play('rotate');
+        // List of available images
+        const images = ['pretzel', 'bubbleTea', 'pickle'];
 
+        // Select a random image
+        const randomImage = Phaser.Utils.Array.GetRandom(images);
+
+        const coin = this.physics.add.sprite(x, y, randomImage);
+        
+        coin.setScale(0.2);
+        
         coin.setVelocityX(Phaser.Math.Between(-400, 400));
         coin.setCollideWorldBounds(true);
         coin.setBounce(0.9);

@@ -25,13 +25,13 @@ export class MainMenu extends Scene
             ease: 'Bounce'
         });
 
-        this.add.text(32, 32, `High Score: ${score}`, textStyle);
+        this.add.text(32, 32, `Record: ${score}`, textStyle);
 
         const instructions = [
-            'How many coins can you',
-            'click in 10 seconds?',
+            'Cornichon, Bretzel, Bubble tea',
+            'Attrape les tous !',
             '',
-            'Click to Start!'
+            'Clique pour commencer zizou'
         ]
 
         this.add.text(512, 550, instructions, textStyle).setAlign('center').setOrigin(0.5);
